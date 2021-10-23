@@ -19,7 +19,7 @@ meta:
     content: Dokumentacja dla Proste Api NFZ
 ---
 
-# Introduction
+# Wstęp
 
 <aside class="warning">
 UWAGA! API jeszcze nie jest dostępne. Jest w trakcie developmentu.
@@ -31,7 +31,7 @@ API które udostępnia NFZ to SOAP api i jest nieporęczne. Dlatego tworzymy nas
 
 Przykłady korzystania z API używają narzędzia curl.
 
-# Authentication
+# Autoryzacja
 
 > Aby się autoryzować użyj tego kodu:
 
@@ -67,9 +67,9 @@ curl "https://proste-api-nfz.com/api/v1/odczyt_recepty?klucz_recepty=KLUCZ_RECEP
 ```json
 {
   "recepta": {
-    "status":  "WYSTAWIONA",
-    "tresc": "Base64-zakodowana-treść-recepty"
-  }
+    "status":  "WYSTAWIONA"
+  },
+  "tresc_recepty": "Base64-zakodowana-treść-recepty"
 }
 ```
 
