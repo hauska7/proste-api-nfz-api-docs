@@ -111,7 +111,7 @@ Ten endpoint zwraca jeden pakiet recept.
 
 ### HTTP Request
 
-`GET https://proste-api-nfz.com/api/v1/odchyt_pakietu_recept`
+`GET https://proste-api-nfz.com/api/v1/odczyt_pakietu_recept`
 
 ### URL Parameters
 
@@ -129,8 +129,6 @@ curl "https://proste-api-nfs.com/api/v1/zapis_pakietu_recept" \
 
 > Powyższa komenda zwraca JSON podobny do:
 
-   expect(result["klucz_pakietu_recept"]).to be_present
-      expect(result["kod_pakietu_recept"]).to be_present
 ```json
 {
   "klucz_pakietu_recept": "KLUCZ_PAKIETU_RECEPT",
