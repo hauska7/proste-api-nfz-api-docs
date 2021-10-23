@@ -39,6 +39,7 @@ end
 activate :relative_assets
 set :relative_links, true
 
+
 # Build Configuration
 configure :build do
   # We do want to hash woff and woff2 as there's a bug where woff2 will use
@@ -52,6 +53,8 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   # activate :gzip
+
+  set :http_prefix, '/api-docs'
 end
 
 # Deploy Configuration
