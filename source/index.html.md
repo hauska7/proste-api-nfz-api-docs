@@ -38,12 +38,19 @@ Aby móc korzystac z API musisz:
 
 # Autoryzacja
 
-Aby sprawdzić czy poprawnie łączysz się z API skopiuj podane polecenie curl do terminala.
+>Zapisz swój API token wygenerowany w zakładce API Tokeny do zmiennej środowiskowej w terminalu.
+
+```shell
+TOKEN=twoj_api_token
+```
+
+>Aby sprawdzić czy poprawnie łączysz się z API skopiuj podane polecenie curl do terminala.
 
 ```shell
 curl -X POST \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   https://proste-api-nfz.com/api/v1/ja
+
 ```
 
 > Powinieneś otrzymać odpowiedź podobną do:
@@ -56,10 +63,6 @@ curl -X POST \
   "uzywane_certyfikaty":"wspolne"
 }
 ```
-
-<aside class="notice">
-Musisz podmienić <code>TOKEN</code> na twój API token.
-</aside>
 
 > Brawo! Połączyłeś się z API.
 
@@ -86,7 +89,7 @@ PARAMS='{"kontekst":'${KONTEKST}',"ogolne":'${OGOLNE}',"recepty":['${RECEPTA_1}'
 
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d "${PARAMS}" \
   https://proste-api-nfz.com/api/v1/erecepta/zapis_pakietu_recept
 ```
@@ -117,7 +120,7 @@ PARAMS='{"kontekst":'${KONTEKST}',"klucz_pakietu_recept":"KLUCZ_PAKIETU_RECEPT"}
 
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d "${PARAMS}" \
   https://proste-api-nfz.com/api/v1/erecepta/odczyt_pakietu_recept
 ```
@@ -142,7 +145,7 @@ Tuż przed wywołaniem tego endpointu należy wywołać Odczyt Pakietu Recept. A
 ```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d '{"klucz_pakietu_recept":"KLUCZ_PAKIETU_RECEPT"}' \
   -o pakiet_recept.html \
   https://proste-api-nfz.com/api/v1/erecepta/pakiet_recept_html
@@ -159,7 +162,7 @@ firefox pakiet_recept.html
 ```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d '{"q":"bact"}' \
   https://proste-api-nfz.com/api/v1/rejestr_lekow/wyszukaj_produkt_leczniczy
 ```
@@ -173,7 +176,7 @@ Za pomocą integracji z Ewuś można sprawdzić, czy dana osoba jest ubezpieczon
 ```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d '{"pesel":"79060804378"}' \
   https://proste-api-nfz.com/api/v1/ewus/check
 ```
@@ -183,7 +186,7 @@ curl -X POST \
 ```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d '{"pesel":"55021562501"}' \
   https://proste-api-nfz.com/api/v1/ewus/check
 ```
@@ -193,7 +196,7 @@ curl -X POST \
 ```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: TOKEN' \
+  -H "Authorization: ${TOKEN}" \
   -d '{"pesel":"niepoprawny"}' \
   https://proste-api-nfz.com/api/v1/ewus/check
 ```
