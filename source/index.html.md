@@ -170,7 +170,7 @@ Za pomocą integracji z Ewuś można sprawdzić, czy dana osoba jest ubezpieczon
 
 ## Osoba ubezpieczona
 
-```
+```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: TOKEN' \
@@ -180,7 +180,7 @@ curl -X POST \
 
 ## Osoba nieubezpieczona
 
-```
+```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: TOKEN' \
@@ -190,7 +190,7 @@ curl -X POST \
 
 ## Niepoprawny pesel
 
-```
+```shell
 curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: TOKEN' \
